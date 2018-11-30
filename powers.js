@@ -23,3 +23,24 @@ document.querySelector("#activate-mindreading").addEventListener("click", mindHa
 //click event listener on "X-ray Vision" button
 document.querySelector("#activate-xray").addEventListener("click", xrayHandlerFunction);
 
+//function to remove "disabled" classes and replace with "enabled" class for "Activate Powers" button -- opposite for "Deactive Powers" button
+function enablePowers () {
+    var enable = document.querySelectorAll(".disabled")
+        for (var i = 0; i < enable.length; i++ ) {
+              enable[i].classList.replace("disabled", "enabled")       
+        }
+}
+
+function disablePowers () {
+    var disabled = document.querySelectorAll(".enabled")
+        for (var i = 0; i < disabled.length; i++ ) { 
+            disabled[i].classList.replace("enabled", "disabled")       
+        }
+}
+//click event listener on "Active All Powers" button
+document.querySelector("#activate-all").addEventListener("click",enablePowers);
+
+
+
+//click event listener on "Deactive All Powers" button
+document.querySelector("#deactivate-all").addEventListener("click", disablePowers);
